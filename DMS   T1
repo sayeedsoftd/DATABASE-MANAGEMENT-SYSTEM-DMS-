@@ -107,6 +107,9 @@ select max(ID) from collage.stu_info;
   alter table collage.stu_info change dept depertment varchar(10);
  -- drop coloum
  alter table collage.stu_info drop cityCode;
+
+
+
  -- * UPDATE STATEMENT 
  update  collage.stu_info set depertment='cse' where ID=210088;   -- (condition mustbe primary key)
  -- *** use of GROUPED BY(devide a table into dub part).
