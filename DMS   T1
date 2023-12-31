@@ -1,0 +1,120 @@
+CREATE DATABASE COLLAGE;
+
+CREATE TABLE COLLAGE.STU_INFO(
+ID INT,
+NAME VARCHAR(20),
+SECTION VARCHAR(2),
+PHONE INT
+); 
+
+ SELECT NAME FROM collage.stu_info ;
+
+insert into collage.stu_info(ID,NAME,SECTION,PHONE)
+values
+(210089,'SAYEED','C',01762525468),
+(210090,'SOHAN','D',01762525468),
+(210091,'SAFI','C',01762525468),
+(210092,'SAMI','A',01762525468),
+(210093,'RITU','C',01762525468),
+(210094,'RAHOL','A',01762525468),
+(210095,'SABBIR','B',01762525468),
+(21044,'sohan','C',017625),
+(21088,'SADO','B',01762525468),
+(210111,'SALA','C',017625);
+
+
+saw information of table;
+ describe collage.stu_info;
+
+ SELECT NAME FROM collage.stu_info order by NAME ;-- USE IT ASSENDING ORDER
+ SELECT NAME FROM collage.stu_info order by NAME DESC ;-- USE IT DESCENDING ORDER
+ select 8+2;-- THIS IS USE IT ARITHMETIC OPERATOR
+
+-- USE OF WHERA 
+ /*
+ GENERAL RULES ::
+ SELECT COLUMN_LIST FROM TABLE_NAME WHERE CONDITION ;'
+ */
+  select NAME from collage.stu_info where PHONE=01762525468;
+ select*from collage.stu_info where PHONE=017625;
+
+
+-- USE OF BETWEEN 
+ select id,section,name from collage.stu_info where id between 210088 and 210091; 
+
+-- use of not equal
+select id,section,name from collage.stu_info where id!=210091;     
+
+
+
+-- use of logical operator OR
+ select * from collage.stu_info where id=210088 or PHONE=01762525468;
+-- use of logical operator AND
+ select * from collage.stu_info where id=21088 and PHONE=01762525468;
+-- use of logical operator IN(to compare multiple values)
+select * from collage.stu_info where id  in(210088,21088,21044);
+ select * from collage.stu_info where id not in(210088,21088,21044);-- (not) jara ar modda ni
+-- use of logical operator like
+ select * from collage.stu_info where name like '%y%';
+-- use of AS key word (change the real name into another name)
+ select id as roll,name as 'first name' from collage.stu_info;
+
+
+
+-- createa leter is upper case
+ select upper('abu sayeed');
+-- createa leter is lower case
+ select lower('ABU SAYEED');
+-- createa leter is lower case in table
+ select lower(name) from collage.stu_info;
+-- use of concate
+ select concat('welcome to ','mysql database');
+-- use of concate_ws(always 1st word remove)
+ select concat_ws('mysql database','too easy');
+-- use of concate multiple colum in table
+ select concat(name,'phone number is ',phone) from collage.stu_info;
+
+
+
+-- use of greatest
+ select greatest(10,8,100,50);
+-- use of truncate
+select truncate(2.35232525235,3);
+-- -- use of log
+ select truncate(log(2),2);
+-- use of e^x
+ select truncate(exp(5),2);
+
+
+
+-- use of count function
+ select count(*) from collage.stu_info;
+-- use of max or min function
+select max(ID) from collage.stu_info;
+ select min(ID) from collage.stu_info;
+
+
+-- use of sum or average function
+ select sum(id),avg(id) from collage.stu_info;
+-- use sub quary 
+ select avg(ID) FROM collage.stu_info;
+ select*from collage.stu_info where id>91439.2774;
+
+
+-- * use of ALTER( (coloum add,delet,)rename table
+ alter table collage.stu_info add cityCode int(10),add dept varchar(17);
+-- rename coloum use of alter
+  alter table collage.stu_info change dept depertment varchar(10);
+ -- drop coloum
+ alter table collage.stu_info drop cityCode;
+ -- * UPDATE STATEMENT 
+ update  collage.stu_info set depertment='cse' where ID=210088;   -- (condition mustbe primary key)
+ -- *** use of GROUPED BY(devide a table into dub part).
+/** syntax:-
+ select coloum name ,group function(column) from table name 
+ [where condition] 
+ group by column name;*/
+ -- *** TRUNCATE TABLE COMAND
+ -- truncate table tableName;
+ 
+ 
