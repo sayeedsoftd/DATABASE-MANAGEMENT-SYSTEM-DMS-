@@ -7,3 +7,13 @@ tutrial.student.id,tutrial.student.name,tutrial.student.address,tutrial.student.
  from
  tutrial.student,tutrial.teacher 
  where tutrial.student.id=tutrial.teacher.teacherID;  -- joining  table
+
+**OR**(USE OF JOIN CLAUSE)
+
+select tutrial.student.id,tutrial.student.name,tutrial.student.address,tutrial.student.contruct,
+ tutrial.student.depertment, tutrial.student.age,
+ tutrial.teacher.teacherID,tutrial.teacher.teacherName,tutrial.teacher.teacherAddress,tutrial.teacher.teacherCity , 
+ tutrial.teacher.teacherSalary 
+ from
+ tutrial.student join tutrial.teacher 
+ on tutrial.student.id=tutrial.teacher.teacherID;
