@@ -1,0 +1,55 @@
+create table tutrial.student       -- create table
+( 
+id int auto_increment,
+name varchar(20),
+address varchar(20),
+contruct int,
+depertment varchar(20),
+age int,
+primary key(id)
+);
+
+alter table tutrial.student change city depertment varchar(20);-- rename coloum use of alter
+
+create table tutrial.teacher         -- create table
+(
+teacherID int,
+teacherName varchar(20),
+teacherAddress varchar(20),
+teacherCity varchar(20),
+teacherSalary int,
+primary key(teacherID)
+
+);
+
+
+alter table tutrial.teacher drop teacherContuct;     -- drop coloum
+
+drop table tutrial.teacher ;  (delete table)
+
+insert into tutrial.student(name,address,contruct,age)   -- add values in a table
+values 
+('sohan','comilla',01571,27),
+('asif','dhaka',01769,24),
+('abu sufi','joypur',01782,35),
+('sabbir','kamalpur',01700,21),
+('alamin','chadpur',013901,25),
+('rifat','comilla',01662,22),
+('sakib','muradnagar',01332,16),
+('nuro','dhaka',01888,28),
+('java','comilla',01702,29);
+
+ update tutrial.student set depertment='THM' where id<=10 and id>6;  -- -- * UPDATE STATEMENT 
+
+ insert into tutrial.teacher(teacherID,teacherName,teacherAddress,teacherCity,teacherSalary)
+ values 
+ (1,'jamal','kaluaghat','comilla',35000),
+ (2,'kamal','muradnagae','dhaka',25000),
+ (3,'jamila','panchkitta','comilla',23000),
+ (4,'pakhi','ramchandrawpur','dhaka',35000),
+ (5,'nazma','mirzapur','jamalpur',50000),
+ (6,'salma','farmghate','monohurpur',27000),
+ (7,'fatima','tikatoli','tikatoli',29000),
+ (8,'jannat','mirpur','dhaka',35000),
+ (9,'sumiya','jalikal','noril',45000),
+ (10,'imran','gostroad','comilla',65000);
