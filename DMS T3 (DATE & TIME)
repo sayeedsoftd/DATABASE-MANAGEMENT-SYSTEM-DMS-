@@ -1,0 +1,15 @@
+  select curdate();  -- saw date 
+  select curtime();  -- saw time 
+  select now(); -- saw date and time 
+  select adddate('2024-01-02', interval 5 day);
+  select adddate('2024-01-02', interval 5 month);
+  select subdate('2024-01-02', interval 5 month);
+ 
+ /*create date 
+ -- name datatype(date);
+-- dob date;(when table are created  and date must be single quatation)*/
+
+Select dayname('2000-05-09'); saw the day name this date 
+
+/* select fildName ,dayname( fildName)
+from tableName  */ -- saw date in a day
