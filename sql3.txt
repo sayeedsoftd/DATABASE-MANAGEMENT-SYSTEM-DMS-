@@ -1,0 +1,104 @@
+create database  sayeed3;
+create table sayeed3.branch
+(
+b_name varchar(20) primary key,
+b_city varchar(20),
+assets int 
+);
+
+create table sayeed3.customer
+(
+c_name varchar(20) primary key,
+c_street varchar(20),
+c_city varchar(20) 
+);
+
+create table sayeed3.loan
+(
+l_number int primary key,
+b_name  varchar(20),
+amount int ,
+foreign key(b_name) references branch(b_name)
+);
+
+create table sayeed3.borrower
+(
+c_name varchar(20) ,
+foreign key(c_name) references customer(c_name),
+l_number int,
+
+foreign key(l_number) references loan(l_number)
+);
+
+create table sayeed3.account 
+(
+a_number varchar(20) primary key  ,
+b_name varchar(20),
+foreign key(b_name) references branch(b_name)
+);
+
+create table sayeed3.depositor
+(
+c_name varchar(20)  ,
+foreign key(c_name) references customer(c_name),
+a_number  varchar(20),
+foreign key(a_number) references account(a_number)
+);
+
+
+insert into sayeed3.branch(b_name,b_city,assets)
+values 
+('dhaka','Dhaka',5),
+('comilla','comilla',6),
+('khulna','khulna',7),
+('chadpur','chadpur',8);
+
+insert into sayeed3.customer(c_name,c_street,c_city)
+values 
+('kamal','1x','x'),
+('jamal','2x','y'),
+('ratul','3x','z'),
+('rajor','4x','o');
+
+
+insert into sayeed3.loan(l_number,b_name,amount)
+values
+(1,'dhaka',2000),
+(2,'comilla',3000),
+(3,'khulna',4000),
+(4,'chadpur',5000);
+
+insert into sayeed3.borrower(c_name,l_number)
+values
+('kamal',1),
+('jamal',2),
+('ratul',3),
+('rajor',4);
+
+
+insert into sayeed3.account(a_number,b_name)
+values
+('1','dhaka'),
+('2','comilla'),
+('3','khulna'),
+('4','chadpur');
+
+
+
+insert into sayeed3.depositor(c_name,a_number)
+values
+('kamal','1'),
+('jamal','2'),
+('ratul','3'),
+('rajor','4');
+
+
+
+
+
+
+IMPLEMENTATION:
+1.select  c_name as depositor_count  from sayeed3.depositor group by c_name;
+2 .
+3.update sayeed3.customer set c_city='dhaka' where c_name='kamal';
+
