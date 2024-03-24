@@ -1,0 +1,84 @@
+create database sayeed4;
+
+create table  sayeed4.employee 
+(
+e_name varchar(20) primary key ,
+street varchar(20),
+city varchar(20)
+);
+
+create table sayeed4.company
+(
+c_name varchar(20) primary key ,
+city varchar(20)
+);
+
+create table sayeed4.works 
+(
+e_name varchar(20)  ,
+foreign key(e_name) references employee(e_name),
+c_name varchar(20),
+foreign key(c_name) references company(c_name),
+salary int
+
+);
+
+create table sayeed4.manager  
+(
+e_name varchar(20)  ,
+foreign key(e_name) references employee(e_name),
+m_name varchar(20)
+);
+
+
+
+insert into sayeed4.employee(e_name,street,city)
+values
+('sayeed','x','y'),
+('saj','x','y'),
+('salr','x','y'),
+('sajo','x','y'),
+('sami','x','y');
+
+insert into sayeed4.company(c_name,city)
+values
+('olio','x'),
+('visha','y'),
+('google','z'),
+('msc','e'),
+('xspace','r');
+
+insert into sayeed4.works(e_name,c_name,salary)
+values
+('sayeed','olio',1000),
+('saj','visha',2000),
+('salr','google',3000),
+('sajo','msc',4000),
+('sami','xspace',5000);
+insert into sayeed4.manager(e_name , m_name)
+values
+('sayeed','jamal'),
+('saj','kamal'),
+('salr','rahim'),
+('sajo','janto'),
+('sami','monto');
+
+
+
+IMPLEMENTATION:
+1. select c_name ,sum(salary) as total_salary from sayeed4.works group by c_name;
+
+2.select e.e_name from employee e left join works w on e.e_name =w.e_name
+where w.c_name is null or w.c_name <> 'aci ltd';
+
+3.insert into sayeed4.employee(e_name ,street,city)
+values 
+('Anware ','123-south','bangladesh');
+
+
+
+
+
+ 
+
+
